@@ -1,0 +1,18 @@
+parameters:
+    dredd_report.security.voter.juror_voter.class: PedroTroller\DreddReport\Security\Voter\JurorVoter
+
+services:
+    dredd_report.court:
+        alias: dredd_report.data_collector.court_collector
+
+    dredd_report.data_collector.court_collector:
+        class: PedroTroller\DreddReport\DataCollector\CourtCollector
+        tags:
+            - { name: data_collector, template: "DreddReportBundle:Collector:wdt.html.twig", id: "dredd_report" }
+
+    dredd_report.judge:
+        class: PedroTroller\DreddReport\Judge
+        decorates: security.access.decision_manager
+        arguments:
+            - @dredd_report.court
+            - @dredd_report.judge.inner

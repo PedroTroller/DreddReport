@@ -1,0 +1,174 @@
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    <script type="text/javascript">
+        function showElement(classname) {
+            var elements = document.getElementsByClassName(classname);
+
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+
+                if (element.style.display != '') {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+        }
+    </script>
+{% endblock head %}
+
+{% block base64 %}
+iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH3woDEAQBePTl9wAAA4BJREFUaN7l20uIHEUYwPFfT2Y0utloXmB8YiJR4wNFBL0oelC8BIwQA4qGeDA56sGAeFTBgyjoRQTxJrp4MV4ECZiT4oMFTz4SHyQoQRIUTYxutj3019AZdzLdy85sT/cHH8zSVTP1r676XlVLfeR2/Io5fIm9WKvBshNpn87GRDROutizAHCKw7hxqX6oUxPg87BhwLOrsQ/TTQO+9BzPH8UVTQJeWQLorlj6jQHeNKTNbU0CXoXrhrS5bCnGWwfgDrYgKbEKkiYAX4h7S7Q7GW5q4oEvwPYS7Y5gftKBV+A+bCzRdjbCzomW6Yik0hJ6QxNCyrdKwn7chETi9ZKwKR6skQutLBfhowqwB8MHT6RswncVYFPsWAr/uxyyAd9UhD2AqybZQM1VBH5iUmE34+eKsLO4eRRx7DjkMayr2OcAvp9E4NW4P2LmKvJ1xM8TB/xwZENV5HccG8VguiOGncI2rFlEvzvwR3zuhibxkpJIJObxL/7BafyFEzgaf/9PRu3fHsGrWL+IvsfiTXcDMgfNx5wbtzOhOfhJ/Ilv8coo7MAgWYv3K1rmpdavsHVcwLtjiaXLrJ+NI/G4Fp/UADbX59EbFez5eKFGsPk+v3xUwDvCeKQ106fQ6fZZ7M4Qy52GKxhUTLs78tye+snGoh/u4QE8HVlNOsCF/RT74dMA70RdqheVx7cXEUKOQ87gnZwrkR1jVNkPm+OL7sQzeLeGS7ioe4tRZQevVfyCPdH3xZqD5vWwqSJsEpa1qiUWxqnucqRolzqFmagiqcmR7bhm3Pnwcso0nsvT0zYAw0O4B0lbgHOP0hrgU/gAaVuAn8QXbQHeh5mIDBtvtE5gP/5ui1tao69a2oYlvU12y6A1wLtkJ5atAb4yNGlTpJUf4rUC+A3ZMa1ixaOJksrq4s/KysWN38MzUek43ga3dBgv4bf+B00FPiQ7l9IW4J6smtoa4DlZdXVB4GQR4Hn7ul4nOiiroS848LTfkpWQvP18DWFn8KYhF1GvjxSqTJ33B1wS/VbLLn3ulB2g7Y+ZXa4a9HuG3MxNCm96Cx4PmPkBq+GQ7DjlqLNLtStC89P6VbIj01tlV49uwU0jDHROyQ4FXo7PQ4H79/S5opeyyzhx9hWFjuzq4VbZv+ysD10XeevFsWKmYsJWygr+xUk6HUDH8Uu8gM/xIX4sM6j/AIlMIbFUcdQ/AAAAAElFTkSuQmCC
+{% endblock base64 %}
+
+{% block user %}    
+iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woDDSArRln9pAAABPZJREFUeNrtnc9rVFcUxz8zk2iq8Re2qWimmkiVoBXaTS0uRCQgKJWWQlusblwIWUiRutZNFxVBt/kH2oXQbhrQ1lJBSFDwB1oRom2UkiKpolaj+WXSxT1PkjBDXt683B+55wMHQmby3sn5vvPm3jP3nlfAf0rAYqAR+Aj4ENgEtAJvA8uAorx3HHgK/AvcBW4Bl4Ae4DkwCLxCyUQ9sBP4FrgKTNRoV+VYO+XYyixoBy4AT3IQYro9kWO3a5jT0TkHIlSzTg13ddYBNy2KkdhNObcyiTag14EYifWKDwrQIKOhCcd2S3yJnjMeiJHYmdjF2C+BGPdAjMSH/bGK8SbQ51F2JPaX+OaEouPsKHt4obzjMktcCbIc2CNlER9LNXvEx2jYAgx7eLtKbFh8jCZDtgMLPL5gFoiP0QjycQBZ7MTHgqN/dgT/K66jLrLYRYZsIIzyd734Ou8F2RrQ4GNrDIK8F9hocN4LsjEgQaK4ZZUDEqQcgyBNAQnSFIMgywISxLqvLuYhr3Bb1JwN41iut7kIzERAGWLd1yKKV7gQZCSg+IzEIEh/QIL0xyDInYAEuRODINcDEuR6DIJ0BySIdV9dzEMWY7YGhEAjZgvDvM6QQczSTd/ptS2Gy3lIVwCCOPFRBVFBAPgTs2rRV/rEx2gE+cfz0Va3+BiNICPAr5gFab4xDJwnrBJPLiwBHuDfqsUH4hsxZQjAM+B7Dy+UH8S3KFmBWZDmS3aMiU/EmCEAj4ETHl0g34lPUbMC03nBdXY8dJ0dvlAEjnggyBH0G9TXrMLNHvXE/hAflEl87lCQLzX8lfnRgRg/adirU8JuR4de/Nzn6BXvAwMWxBiQcykp2MfcbgodBr7SMM+OYzJznovZ+DENbza+AYZyFGMIOKphrY1PMH0UaxXjKfCphjMf3sU0tcwqxl0c7IaKgePA/VkIcV/+RslA2jViZeAQprfVvQoi9Mlrh0i/Ja2g4a9Mh9ye0rAIs+VsLaaHb6v83CSvpb0VdmjYK7NFhqSPgG0WzrdNzjVGWFu1rdDC1L6Lg8BhzFLOvGmUYw8ytd9ii8pgaMOUvyt9KF8k34bH7XLMaiX46DuTdjDzd+qjwM+YTm9ZKcsx0pwrms+UEmZ5TRnYDVzLMJ84JxPFVmAlpq1rYdpoqUFea5X3ns1wnmviY1l8tlYRzmu49wGwA1jK1J2rE3KON+TevVY+vGvtkPCf3PfvYaq2yYK7hTLKWod5gsLSGs/zN3BD5jPPgRcVYlYQf37HNPx3ygbMomQb5XLfbUBi4aQiUAecVBGq2kmJkRV2YXrbauBn7v+7a67FOAW81GCnthcSs9xpAC5rgDPbZXJs9N8MXNGg5vLIpeY8xOjRYOZmPbWIsgS4rUHM3W6TYf9JfcaZtFr6SkDqVrkl7D6YK1brTFuSOaDBsmYHZqplNUvdRpfl22Fcqtiv20BND/wvKoZVipjdyFM+LxKOA59pjKzzltypLkz+5WZJG72vu7F+0YCiVCUPAqv1YnXGatGgrgCsl8mKPkHZLaNAWwk4Ld/4KW4pAcsLokydxsMLxgqE1Wk6inGwooIoKogKoqggKoiigqggigqigigqiFJVkCENgzcMFQnrASvzne4SpgfIFxoLL/gazDawLvR7bdfWJVoAsEZFcS7GmunpshDYC/yGbsqxYS8l1nsnZ8b/ymhuQoT05tQAAAAASUVORK5CYII=
+{% endblock user %}
+
+{% block toolbar %}
+    {% if collector.data.cases is not empty %}
+        {% set icon %}
+            <img width="20" height="28" alt="DreddReport" src="data:image/png;base64,{{- block('base64') -}}" />
+        {% endset %}
+        {% set text %}
+            {% for key, data in collector.data.polls %}
+                <div>
+                    {% if data.sentence == true %}
+                        <span class="sf-toolbar-status sf-toolbar-status-green">OK</span>
+                    {% else %}
+                        <span class="sf-toolbar-status sf-toolbar-status-red">KO</span>
+                    {% endif %}
+                    <abbr title="{{ data.object }}">
+                        {{ data.arguments|join(',') }}
+                    </abbr>
+                </div>
+            {% endfor %}
+        {% endset %}
+        {% include 'WebProfilerBundle:Profiler:toolbar_item.html.twig' with { 'link': profiler_url } %}
+    {% endif %}
+{% endblock %}
+
+{% block menu %}
+<span class="label">
+    <span class="icon">
+        <img width="26" height="28" alt="DreddReport" src="data:image/png;base64,{{- block('base64') -}}" />
+    </span>
+    <strong>DreddReport</strong>
+    <span class="count">
+        <span></span>
+    </span>
+</span>
+{% endblock %}
+
+{% block panel %}
+    {% for key, poll in collector.data.polls %}
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20px">Case</th>
+                    <th>Arguments</th>
+                    <th style="width: 20px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="font-weight: bold">
+                    <td style="text-align: center">
+                        <span style="    
+                            display: inline-block;
+                            font-size: 15px;
+                        "> {{ loop.index }} </span>
+                    </td>
+                    <td>{{ poll.arguments|join(', ') }}</td>
+                    <td>
+                        {% if poll.sentence == true %}
+                            <a href="javascript:showElement('{{ key }}');" style="
+                                display: inline-block;
+                                background-color: #aacd4e;
+                                border-radius: 6px;
+                                padding: 8px;
+                                color: #fff;
+                                margin-right: 2px;
+                                font-size: 15px;
+                                width: 40px;
+                                font-weight: bold;
+                                text-align: center;
+                            ">OK</a>
+                        {% else %}
+                            <a href="javascript:showElement('{{ key }}');" style="
+                                display: inline-block;
+                                background-color: #a33;
+                                border-radius: 6px;
+                                padding: 8px;
+                                color: #fff;
+                                margin-right: 2px;
+                                font-size: 15px;
+                                width: 40px;
+                                font-weight: bold;
+                                text-align: center;
+                            ">KO</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr style="font-weight: bold;display: none" class="{{ key }}">
+                    <td>Subject</td>
+                    <td colspan="2">{{ poll.object }}</td>
+                </tr>
+                {% set case = collector.data.cases[key] %}
+                {% for vote in case.votes %}
+                    <tr style="display: none" class="{{ key }}">
+                        <td style="text-align: center">
+                            <img width="30" height="30" alt="Juror" src="data:image/png;base64,{{- block('user') -}}" />
+                        </td>
+                        <td>
+                            {{ vote.juror }}
+                        </td>
+                        <td>
+                            {% if vote.vote == constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_GRANTED') %}
+                                <abbr style="    
+                                    display: inline-block;
+                                    background-color: #aacd4e;
+                                    border-radius: 6px;
+                                    padding: 8px;
+                                    color: #fff;
+                                    margin-right: 2px;
+                                    font-size: 15px;
+                                    width: 40px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                " title="This voter granted access">YES</abbr>
+                            {% elseif vote.vote == constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_DENIED') %}
+                                <abbr style="    
+                                    display: inline-block;
+                                    background-color: #a33;
+                                    border-radius: 6px;
+                                    padding: 8px;
+                                    color: #fff;
+                                    margin-right: 2px;
+                                    font-size: 15px;
+                                    width: 40px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                " title="This voter denied access">NO</abbr>
+                            {% else %}
+                                <abbr style="    
+                                    display: inline-block;
+                                    background-color: #666;
+                                    border-radius: 6px;
+                                    padding: 8px;
+                                    color: #fff;
+                                    margin-right: 2px;
+                                    font-size: 15px;
+                                    width: 40px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                " title="This voter abstains">-</abbr>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            <tbody>
+        </table>
+    {% endfor %}
+{% endblock %}
