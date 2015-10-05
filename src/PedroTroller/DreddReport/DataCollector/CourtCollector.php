@@ -64,6 +64,13 @@ class CourtCollector extends DataCollector implements Court
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
+        if (false === array_key_exists('cases', $this->data)) {
+            $this->data['cases'] = [];
+        }
+
+        if (false === array_key_exists('polls', $this->data)) {
+            $this->data['polls'] = [];
+        }
     }
 
     /**
