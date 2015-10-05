@@ -39,7 +39,7 @@ class CourtCollector extends DataCollector implements Court
         $this->data['polls'][$this->case] = [
             'arguments' => $arguments,
             'object'    => $this->varToString($object),
-            'token'     => $token,
+            'token'     => $this->varToString($token),
         ];
     }
 
