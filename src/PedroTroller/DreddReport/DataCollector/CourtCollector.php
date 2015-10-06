@@ -40,6 +40,7 @@ class CourtCollector extends DataCollector implements Court
             'arguments' => $arguments,
             'object'    => $this->varToString($object),
             'token'     => $this->varToString($token),
+            'sentence'  => null
         ];
     }
 
