@@ -115,7 +115,7 @@ iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMA
                     <td>Subject</td>
                     <td colspan="2">{{ poll.object }}</td>
                 </tr>
-                {% set case = collector.data.cases[key] %}
+                {% set case = collector.data.cases[key]|default({votes: []}) %}
                 {% for vote in case.votes %}
                     <tr style="display: none" class="{{ key }}">
                         <td style="text-align: center">
