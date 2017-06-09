@@ -8,15 +8,14 @@
         }
     ],
     "require": {
-        "bossa/phpspec2-expect": "^2.2",
-        "phpspec/phpspec": "~3.3.0",
         "symfony/dependency-injection": "~3.0",
         "symfony/http-kernel": "~3.0",
         "symfony/security-bundle": "~3.0",
         "symfony/var-dumper": "~3.0"
     },
     "require-dev": {
-        "pedrotroller/project-requirements": "*@dev"
+        "bossa/phpspec2-expect": "^2.2",
+        "phpspec/phpspec": "~3.3.0"
     },
     "autoload": {
         "psr-4": {
