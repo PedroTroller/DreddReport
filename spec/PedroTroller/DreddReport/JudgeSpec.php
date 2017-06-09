@@ -4,7 +4,6 @@ namespace spec\PedroTroller\DreddReport;
 
 use PedroTroller\DreddReport\Court;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 
 class JudgeSpec extends ObjectBehavior

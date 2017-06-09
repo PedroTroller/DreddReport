@@ -8,20 +8,23 @@
         }
     ],
     "require": {
-        "symfony/dependency-injection": "~2.4",
-        "symfony/http-kernel": "~2.0",
-        "symfony/security-bundle": "~2.0",
-        "symfony/var-dumper": "~2.6"
-    },
-    "autoload": {
-        "psr-0": { "PedroTroller\\DreddReport": "src/" }
-    },
-    "config": {
-        "bin-dir": "bin"
+        "bossa/phpspec2-expect": "^2.2",
+        "phpspec/phpspec": "~3.3.0",
+        "symfony/dependency-injection": "~3.0",
+        "symfony/http-kernel": "~3.0",
+        "symfony/security-bundle": "~3.0",
+        "symfony/var-dumper": "~3.0"
     },
     "require-dev": {
-        "bossa/phpspec2-expect": "^1.0",
-        "knplabs/phpspec-welldone-extension": "dev-master@dev",
-        "phpspec/phpspec": "^2.2"
+        "pedrotroller/project-requirements": "*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "PedroTroller\\DreddReport\\": "src/PedroTroller/DreddReport/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
     }
 }

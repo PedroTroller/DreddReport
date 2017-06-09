@@ -7,14 +7,10 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface
 
 class Judge implements AccessDecisionManagerInterface
 {
-    /**
-     * @var Court
-     */
+    /** @var Court */
     private $court;
 
-    /**
-     * @var AccessDecisionManagerInterface
-     */
+    /** @var AccessDecisionManagerInterface */
     private $wrapped;
 
     /**

@@ -8,14 +8,10 @@ use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
 
 class JurorVoter implements VoterInterface
 {
-    /**
-     * @var VoterInterface
-     */
+    /** @var VoterInterface */
     private $wrapped;
 
-    /**
-     * @var Court
-     */
+    /** @var Court */
     private $court;
 
     /**
@@ -36,28 +32,6 @@ class JurorVoter implements VoterInterface
     public function getJuror()
     {
         return $this->wrapped;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function supportsAttribute($attribute)
-    {
-        return $this
-            ->wrapped
-            ->supportsAttribute($attribute)
-        ;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function supportsClass($class)
-    {
-        return $this
-            ->wrapped
-            ->supportsClass($class)
-        ;
     }
 
     /**

@@ -20,7 +20,7 @@ class JurorCreationPassSpec extends ObjectBehavior
             ->findTaggedServiceIds('security.voter')
             ->willReturn([
                 'app.security.voter.owner_voter' => [],
-                'app.security.voter.edit_voter' => [],
+                'app.security.voter.edit_voter'  => [],
             ])
         ;
 

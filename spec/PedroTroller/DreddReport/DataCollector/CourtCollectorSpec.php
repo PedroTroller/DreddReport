@@ -4,7 +4,6 @@ namespace spec\PedroTroller\DreddReport\DataCollector;
 
 use PedroTroller\DreddReport\Security\Voter\JurorVoter;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
 

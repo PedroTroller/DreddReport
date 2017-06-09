@@ -36,6 +36,6 @@ class DreddReportBundle extends Bundle
      */
     public function getNamespace()
     {
-        return substr(parent::getNamespace(), 0, strrpos(parent::getNamespace(), '\\'));
+        return mb_substr(parent::getNamespace(), 0, mb_strrpos(parent::getNamespace(), '\\'));
     }
 }

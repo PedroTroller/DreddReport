@@ -11,14 +11,10 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 class CourtCollector extends DataCollector implements Court
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $case;
 
-    /**
-     * @var JurorVoter[]
-     */
+    /** @var JurorVoter[] */
     private $jurors = [];
 
     /**
@@ -40,7 +36,7 @@ class CourtCollector extends DataCollector implements Court
             'arguments' => $arguments,
             'object'    => $this->varToString($object),
             'token'     => $this->varToString($token),
-            'sentence'  => null
+            'sentence'  => null,
         ];
     }
 
