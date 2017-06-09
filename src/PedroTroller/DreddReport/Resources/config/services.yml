@@ -14,5 +14,5 @@ services:
         class: PedroTroller\DreddReport\Judge
         decorates: security.access.decision_manager
         arguments:
-            - @dredd_report.court
-            - @dredd_report.judge.inner
+            - '@dredd_report.court'
+            - '@dredd_report.judge.inner'
